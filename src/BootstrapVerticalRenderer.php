@@ -41,6 +41,7 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
             'erroritem' => '',
             '.required' => 'required',
             '.text' => 'text form-control',
+            '.email' => 'text form-control',
             '.password' => 'text form-control',
             '.file' => 'text',
             '.select' => 'form-control',
@@ -66,6 +67,11 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
      */
     public function render(Nette\Forms\Form $form, $mode = null)
     {
+        
+        if ($this->form !== $form) {
+            $this->form = $form;
+        }
+        
         $form->getElementPrototype()->setNovalidate('novalidate');
 
         $usedPrimary = FALSE;
@@ -91,6 +97,11 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
 
   public function renderControl(Nette\Forms\IControl $control)
   {
+      $form = $control->getForm();
+      if ($this->form !== $form) {
+          $this->form = $form;
+      }  
+      
     $body = $this->getWrapper('control container');
     if ($this->counter % 2) {
       $body->class($this->getValue('control .odd'), TRUE);
