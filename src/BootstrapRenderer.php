@@ -126,6 +126,9 @@ class BootstrapRenderer extends DefaultFormRenderer {
     if ($control instanceof Controls\SelectBox) {
       $el->class($this->getValue("control .select"), true);
     }
+    if($control instanceof Controls\TextArea) {
+      $el->class('form-control');
+    }
 
     return $body->setHtml($el . $description . $this->renderErrors($control));
   }
