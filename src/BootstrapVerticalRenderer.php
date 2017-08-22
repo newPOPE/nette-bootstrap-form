@@ -41,6 +41,7 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
             'erroritem' => '',
             '.required' => 'required',
             '.text' => 'text form-control',
+            '.number' => 'text form-control',
             '.email' => 'text form-control',
             '.password' => 'text form-control',
             '.file' => 'text',
