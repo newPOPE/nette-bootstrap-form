@@ -46,7 +46,7 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
             '.password' => 'text form-control',
             '.file' => 'text',
             '.select' => 'form-control',
-            '.submit' => 'button',
+            '.submit' => 'btn',
             '.image' => 'imagebutton',
             '.button' => 'button',
         ),

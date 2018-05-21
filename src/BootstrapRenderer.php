@@ -45,7 +45,7 @@ class BootstrapRenderer extends DefaultFormRenderer {
       '.password'      => 'text form-control',
       '.select'        => 'text form-control',
       '.file'          => 'text',
-      '.submit'        => 'button',
+      '.submit'        => 'btn',
       '.image'         => 'imagebutton',
       '.button'        => 'button',
     ],
