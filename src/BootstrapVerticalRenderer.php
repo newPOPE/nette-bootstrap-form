@@ -78,7 +78,9 @@ class BootstrapVerticalRenderer extends DefaultFormRenderer
         $usedPrimary = FALSE;
         foreach ($form->getControls() as $control) {
             if ($control instanceof Controls\Button) {
-                if (strpos($control->getControlPrototype()->getClass(), 'btn') === FALSE) {
+                $class = $control->getControlPrototype()->getClass();
+                $class = is_array($class) ? array_shift($class) : $class;
+                if (strpos($class, 'btn') === false) {
                     $control->getControlPrototype()->addClass(empty($usedPrimary) ? 'btn btn-primary' : 'btn btn-default');
                     $usedPrimary = true;
                 }
